@@ -1,0 +1,28 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { ChatPageComponent } from './chat-page/chat-page.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule }    from '@angular/common/http';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    MainPageComponent,
+    LoginPageComponent,
+    ChatPageComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
