@@ -1,0 +1,140 @@
+.chat-wrapper {
+    display: grid;
+    background: white;
+    height: 600px;
+    width: 50vw;
+    border: 1px solid #d9d9d9;
+    grid-template-areas: 
+    "header header"
+    "nav chat";
+    grid-template-rows: 10% 90%;
+    grid-template-columns: 30% 70%;
+}
+
+#header {
+    grid-area: header;
+    background:  #256eb3;
+    display:flex;
+    align-items: center;
+    color:white;
+    padding-left: 10px;
+    font-size: 1.3em;
+}
+
+#chat-window {
+    grid-area: chat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #f9f9f9;
+    overflow:auto;
+}
+
+#links {
+    grid-area: nav;
+    /* border-right: 1px solid #d9d9d9; */
+    display: grid;
+    grid-template-areas:
+    "users rooms"
+    "info info";
+    grid-template-rows: 7% 93%;
+    grid-template-columns: 50% 50%;
+}
+
+#links div {
+    font-size: 1.05em;
+}
+
+.users {
+    grid-area: users;
+    display: flex;
+    color:  #256eb3;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 33px;
+    border-bottom: 2px solid #256eb3;
+    border-right: 1px solid #d9d9d9;
+}
+
+.rooms {
+    grid-area: rooms;
+    display: flex;
+    color:  #256eb3;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 33px;
+    border-bottom: 2px solid #256eb3;
+}
+
+.users:hover, .rooms:hover {
+    box-shadow: 0 3px 2px rgba(0,0,0,0.1) inset; 
+    background:  #256eb3;
+    color: white;
+}
+
+
+.list-links {
+    grid-area: info;
+    list-style-type:none;
+    background: #e8e6e6; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.link {
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #d9d9d9;
+    cursor: pointer;
+}
+
+.list-links button {
+    height: 30px;
+    width: 105px;
+    margin-top: auto;
+    margin-bottom: 7px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.selected-button {
+    box-shadow: 0 3px 2px rgba(0,0,0,0.1) inset; 
+    background:  #256eb3;
+    color: white;
+}
+
+.chat-send-message {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+.chat-send-message input {
+    margin-left: 5px;
+    color:grey;
+    border: none;
+    height: 40px;
+    width: 80%;
+    outline:none;
+}
+
+.chat-send-message button {
+    height: 30px;
+    margin-right: 10px;
+    width: 53px;
+}
+
+.selected-room {
+    background: #f9f9f9;
+    color: rgba(37, 110, 179, 0.73);
+    cursor: pointer;
+}
+
+
+

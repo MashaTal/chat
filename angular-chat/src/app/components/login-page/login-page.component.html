@@ -4,6 +4,7 @@
         <input class="input" type="text" [(ngModel)]="login">
         <span class="input">Password:</span>
         <input class="input" type="password" [(ngModel)]="password">
-        <button class="button-join" (click) = "join()">Join</button>
+        <span class="error" *ngIf="isError">ERROR: Incorrect username or password</span>
+        <button class="button-join button" (click) = "join()">Join</button>
     </div>
 </div>

@@ -1,0 +1,30 @@
+<div class="content">
+   <div class="chat-wrapper">
+       <div id="header">
+           <span>{{login}}</span>
+       </div>
+       <div id="chat-window">
+           <ul *ngFor = "let room of rooms" class="chat-window-msgs"  [hidden]="room !== selectedRoom" #uls ></ul>
+           <div class="chat-send-message">
+                <input type="text" [(ngModel)]="textMessage" placeholder="Type a message...">
+                <button (click)="sendMessage()" class="button">send</button>
+           </div>
+       </div>
+       <div id="links">
+           <div class="users" [class.selected-button] ="selectedField == 'user'" (click)="selectField('user')">users</div>
+           <div class="rooms" [class.selected-button] ="selectedField == 'room'" (click)="selectField('room')">rooms</div>
+            <ul class="list-links" *ngIf="selectedField === 'room'">
+                    <li class="link"  [class.selected-room] ="room === selectedRoom" *ngFor="let room of rooms" (click)="selectRoom(room)" >Room: {{room.id}}</li>
+                    <button class="button" *ngIf="!isAdmin" (click)="createNewEntity('room')">create {{selectedField}}</button>   
+            </ul>  
+            <ul class="list-links" *ngIf="selectedField === 'user'">
+                    <li class="link" *ngFor="let user of users"> 
+                        User: {{user.login}}
+                        id: {{user.id}}
+                    </li>
+                    <button *ngIf="isAdmin" class="button" (click)="createNewEntity('user')">create {{selectedField}}</button>   
+            </ul> 
+
+       </div>
+   </div> 
+</div>

@@ -1,0 +1,10 @@
+<div class="entity-wrapper">
+    <div class="entity-table">
+        <div *ngFor="let field of fields" class="entity-block">
+            <span>Enter {{field.name}}:</span>
+            <input type="text" [(ngModel)] = "field.value" >
+        </div>
+        <button class="button" (click)="save()">save</button>
+        <span class ="error" *ngIf = "isError">ERROR: this {{fields[0].name}} already exist</span>
+    </div>
+</div>
